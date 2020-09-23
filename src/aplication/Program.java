@@ -17,7 +17,7 @@ public class Program {
 	public static void main(String[] args) throws ParseException {
 		Locale.setDefault(Locale.US);
 		Scanner ler = new Scanner ( System.in );
-		SimpleDateFormat formatDate = new SimpleDateFormat("dd/mm/yyyy");
+		SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
 		
 		String nameDp;
 		System.out.print("Enter department´s name : ");nameDp=ler.nextLine();
@@ -29,11 +29,11 @@ public class Program {
 		String workerLevel;
 		System.out.print("Level: ");workerLevel=ler.nextLine();
 		Double baseSalary;
-		System.out.println("Base salary: ");baseSalary=ler.nextDouble();
+		System.out.print("Base salary: ");baseSalary=ler.nextDouble();
 		Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(nameDp));
 						
 		int numContracts = 0;
-		System.out.println("How many contracts to this worker? ");numContracts=ler.nextInt();
+		System.out.print("How many contracts to this worker? ");numContracts=ler.nextInt();
 		
 		for (int c=1 ; c <= numContracts ; c++  ) {
 			System.out.printf("Enter contract #%d data:%n",c);
@@ -47,7 +47,7 @@ public class Program {
 			worker.addContract(contract);
 		}
 		
-		System.out.println("Enter month and year to calculation income (MM/YYYY): ");
+		System.out.printf("%n%nEnter month and year to calculation income (MM/YYYY): ");
 		String monthAndYear = ler.next();
 		int month = Integer.parseInt(monthAndYear.substring(0, 2));
 		int year = Integer.parseInt(monthAndYear.substring(3));
